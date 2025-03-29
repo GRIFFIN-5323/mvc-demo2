@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public class DBConnection {
     
     private static DBConnection dbConnection;
-    private Connection conection;
+    private Connection connection;
             
     
     
@@ -37,6 +37,6 @@ public class DBConnection {
     }
     
     public Connection getConnection(){
-        return this.conection;
+        return this.connection;
     }
 }

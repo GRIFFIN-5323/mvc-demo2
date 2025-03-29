@@ -9,6 +9,10 @@ import java.sql.SQLException;
 import project2.edu.mvc.DBConnection.DBConnection;
 import project2.edu.mvc.dto.ItemDto;
 import java.sql.Connection;
+import java.sql.ResultSet;
+ 
+
+import java.util.ArrayList;
 
  
 
@@ -96,6 +100,57 @@ public class ItemModel {
         
         
     }
+            
+                 public ItemDto searchItem(String code) throws ClassNotFoundException, SQLException{
+        Connection connection=DBConnection.getInstance().getConnection();
+        
+        String sql="SELECT ALL * FROM Item WHERE ItemCode=? ";
+        PreparedStatement statement =connection.prepareStatement(sql);
+        
+        statement.setString(1,code);
+        
+        ResultSet rst= statement.executeQuery();
+        
+        if(rst.next()){
+            
+            ItemDto dto=new ItemDto(rst.getString("ItemCode"),rst.getString("Description"),rst.getString(PackSize),rst.getDouble("UnitPrice"),rst.getInt("QtyOnHand"));
+            
+              return dto;
+            
+        }
+        
+        return null;
+        
+      
+        }
+        
+        
+            
+            public ArrayList<ItemDto> getALL(String code) throws ClassNotFoundException, SQLException{
+        Connection connection=DBConnection.getInstance().getConnection();
+        
+        String sql="SELECT ALL * FROM Item ";
+        PreparedStatement statement =connection.prepareStatement(sql);
+        
+     
+        
+        ResultSet rst= statement.executeQuery();
+          ArrayList<ItemDto> itemDtos = new ArrayList<>();
+        
+        while(rst.next()){
+            
+            ItemDto dto=new ItemDto(rst.getString("ItemCode"),rst.getString("Description"),rst.getString(PackSize),rst.getDouble("UnitPrice"),rst.getInt("QtyOnHand"));
+            itemDtos.add(dto);
+            
+        }
+        
+        return Itemdtos;
+        
+      
+        }
+               
+            
+            
             
             
    

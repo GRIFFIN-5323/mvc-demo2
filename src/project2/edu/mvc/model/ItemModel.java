@@ -5,7 +5,7 @@
 package project2.edu.mvc.model;
 
 
-import java.sql.SQLException;
+
 import project2.edu.mvc.DBConnection.DBConnection;
 import project2.edu.mvc.dto.ItemDto;
 import java.sql.Connection;
@@ -144,7 +144,7 @@ public class ItemModel {
             
         }
         
-        return Itemdtos;
+        return ItemDtos;
         
       
         }

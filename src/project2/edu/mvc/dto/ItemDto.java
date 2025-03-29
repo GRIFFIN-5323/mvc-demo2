@@ -9,88 +9,280 @@ package project2.edu.mvc.dto;
  * @author gihan5323
  */
 public class ItemDto {
-    
-    private String orderId;
+
+ 
+
     private String itemCode;
-    private int qty;
-    private int discount;
+ 
+
+    private String description;
+ 
+
+    private String packSize;
+ 
+
+    private double unitPrice;
+ 
+
+    private int qoh;
+ 
+
+
+ 
 
     public ItemDto() {
-    }
+ 
 
-    public ItemDto(String orderId, String itemCode, int qty, int discount) {
-        this.orderId = orderId;
+    }
+ 
+
+
+ 
+
+    public ItemDto(String itemCode, String description, String packSize, double unitPrice, int qoh) {
+ 
+
         this.itemCode = itemCode;
-        this.qty = qty;
-        this.discount = discount;
+ 
+
+        this.description = description;
+ 
+
+        this.packSize = packSize;
+ 
+
+        this.unitPrice = unitPrice;
+ 
+
+        this.qoh = qoh;
+ 
+
     }
+ 
+
+
+ 
 
     /**
-     * @return the orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
+ 
 
-    /**
-     * @param orderId the orderId to set
-     */
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    /**
      * @return the itemCode
+ 
+
      */
+ 
+
     public String getItemCode() {
+ 
+
         return itemCode;
+ 
+
     }
+ 
+
+
+ 
 
     /**
+ 
+
      * @param itemCode the itemCode to set
+ 
+
      */
+ 
+
     public void setItemCode(String itemCode) {
+ 
+
         this.itemCode = itemCode;
+ 
+
     }
+ 
+
+
+ 
 
     /**
-     * @return the qty
+ 
+
+     * @return the description
+ 
+
      */
-    public int getQty() {
-        return qty;
+ 
+
+    public String getDescription() {
+ 
+
+        return description;
+ 
+
     }
+ 
+
+
+ 
 
     /**
-     * @param qty the qty to set
+ 
+
+     * @param description the description to set
+ 
+
      */
-    public void setQty(int qty) {
-        this.qty = qty;
+ 
+
+    public void setDescription(String description) {
+ 
+
+        this.description = description;
+ 
+
     }
+ 
+
+
+ 
 
     /**
-     * @return the discount
+ 
+
+     * @return the packSize
+ 
+
      */
-    public int getDiscount() {
-        return discount;
+ 
+
+    public String getPackSize() {
+ 
+
+        return packSize;
+ 
+
     }
+ 
+
+
+ 
 
     /**
-     * @param discount the discount to set
-     */
-    public void setDiscount(int discount) {
-        this.discount = discount;
-    }
+ 
 
-    @Override
+     * @param packSize the packSize to set
+ 
+
+     */
+ 
+
+    public void setPackSize(String packSize) {
+ 
+
+        this.packSize = packSize;
+ 
+
+    }
+ 
+
+
+ 
+
+    /**
+ 
+
+     * @return the unitPrice
+ 
+
+     */
+ 
+
+    public double getUnitPrice() {
+ 
+
+        return unitPrice;
+ 
+
+    }
+ 
+
+
+ 
+
+    /**
+ 
+
+     * @param unitPrice the unitPrice to set
+ 
+
+     */
+ 
+
+    public void setUnitPrice(double unitPrice) {
+ 
+
+        this.unitPrice = unitPrice;
+ 
+
+    }
+ 
+
+
+ 
+
+    /**
+ 
+
+     * @return the qoh
+ 
+
+     */
+ 
+
+    public int getQoh() {
+ 
+
+        return qoh;
+ 
+
+    }
+ 
+
+
+ 
+
+    /**
+ 
+
+     * @param qoh the qoh to set
+ 
+
+     */
+ 
+
+    public void setQoh(int qoh) {
+ 
+
+        this.qoh = qoh;
+ 
+
+    }
+ 
+
+
+ 
+
     public String toString() {
-        return "ItemDto{" + "orderId=" + orderId + ", itemCode=" + itemCode + ", qty=" + qty + ", discount=" + discount + '}';
+ 
+
+        return "ItemDto{" + "itemCode=" + itemCode + ", description=" + description + ", packSize=" + packSize + ", unitPrice=" + unitPrice + ", qoh=" + qoh + '}';
+ 
+
     }
-    
-    
-    
-    
-    
+ 
 
 
-    
+ 
+
 }

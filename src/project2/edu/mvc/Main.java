@@ -4,6 +4,8 @@
  */
 package project2.edu.mvc;
 
+import project2.edu.mvc.View.ItemView;
+
 /**
  *
  * @author gihan5323
@@ -14,7 +16,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello");
+        new ItemView().setVisible(true);
         // TODO code application logic here
     }
     

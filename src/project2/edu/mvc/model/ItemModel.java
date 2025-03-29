@@ -126,7 +126,7 @@ public class ItemModel {
         
         
             
-            public ArrayList<ItemDto> getALL(String code) throws ClassNotFoundException, SQLException{
+            public ArrayList<ItemDto> getALL() throws ClassNotFoundException, SQLException{
         Connection connection=DBConnection.getInstance().getConnection();
         
         String sql="SELECT ALL * FROM Item ";
@@ -135,12 +135,12 @@ public class ItemModel {
      
         
         ResultSet rst= statement.executeQuery();
-          ArrayList<ItemDto> itemDtos = new ArrayList<>();
+          ArrayList<ItemDto> ItemDtos = new ArrayList<>();
         
         while(rst.next()){
             
-            ItemDto dto=new ItemDto(rst.getString("ItemCode"),rst.getString("Description"),rst.getString(PackSize),rst.getDouble("UnitPrice"),rst.getInt("QtyOnHand"));
-            itemDtos.add(dto);
+            ItemDto dto=new ItemDto(rst.getString("ItemCode"),rst.getString("Description"),rst.getString("PackSize"),rst.getDouble("UnitPrice"),rst.getInt("QtyOnHand"));
+            ItemDtos.add(dto);
             
         }
         

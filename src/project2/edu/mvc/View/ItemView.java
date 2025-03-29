@@ -4,14 +4,20 @@
  */
 package project2.edu.mvc.View;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
+import project2.edu.mvc.Controller.ItemController;
+import project2.edu.mvc.dto.ItemDto;
 
 /**
  *
  * @author gihan5323
  */
 public class ItemView extends javax.swing.JFrame {
+    
+    private ItemController itemController =new ItemController();
 
     /**
      * Creates new form ItemView
@@ -381,6 +387,45 @@ public class ItemView extends javax.swing.JFrame {
  
 
         viewTable.setModel(dtm);
+        
+         try{
+
+ 
+
+             ArrayList<ItemDto> items = itemController.getAll();
+ 
+
+            for (ItemDto item : items) {
+ 
+
+                Object[] rowData = {item.getItemCode(), item.getDescription(), item.getPackSize(), item.getUnitPrice(), item.getQoh()};
+ 
+
+                
+ 
+
+                dtm.addRow(rowData);
+ 
+
+            }
+ 
+
+            
+ 
+
+        } catch(Exception e){
+ 
+
+             JOptionPane.showMessageDialog(this, e.getMessage());
+ 
+
+        }
+ 
+
+        
+        
+        
+        
  
 
         
